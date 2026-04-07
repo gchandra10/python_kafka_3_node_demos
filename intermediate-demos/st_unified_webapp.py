@@ -36,7 +36,7 @@ def send_to_kafka(topic, key, payload_data):
 
 # --- Streamlit UI Setup ---
 st.set_page_config(page_title="Rowan Big Data Kafka Lab", layout="centered")
-st.title("🛰️ Kafka Real-Time Interactive Lab")
+st.title("Kafka Real-Time Interactive Lab")
 
 demo_mode = st.sidebar.selectbox(
     "Select Demonstration",
@@ -47,7 +47,7 @@ student_name = st.sidebar.text_input("Enter Your Name/ID", value="Student_1")
 
 # --- 1. Global Pulse Logic ---
 if demo_mode == "1. Global Pulse (Partitioning)":
-    st.header("🌐 Global Pulse")
+    st.header("Global Pulse")
     region = st.selectbox("Select your Region:", ["North", "South", "East", "West"])
     
     if st.button("Emit Pulse"):
@@ -62,7 +62,7 @@ if demo_mode == "1. Global Pulse (Partitioning)":
 
 # --- 2. Real-Time Auction Logic ---
 elif demo_mode == "2. Real-Time Auction (Consistency)":
-    st.header("🔨 Real-Time Auction")
+    st.header("Real-Time Auction")
     if st.button("Place Bid ($10)"):
         # We send the bid as the 'data'
         send_to_kafka(
@@ -75,7 +75,7 @@ elif demo_mode == "2. Real-Time Auction (Consistency)":
 
 # --- 3. Fraud Detection Logic ---
 elif demo_mode == "3. Fraud Detection (CEP)":
-    st.header("💳 Fraud Simulator")
+    st.header("Fraud Simulator")
     if st.button("Swipe Credit Card"):
         # We send the amount as the 'data'
         send_to_kafka(

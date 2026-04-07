@@ -4,8 +4,13 @@ version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
     "confluent-kafka>=2.13.2",
+    "kafka-python",
+    "pyyaml>=6.0.3",
     "requests>=2.33.0",
     "sseclient-py>=1.9.0",
     "streamlit>=1.55.0",
     "websocket-client>=1.9.0",
 ]
+
+[tool.uv.sources]
+kafka-python = { git = "https://github.com/dpkp/kafka-python.git" }
